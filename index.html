@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEB32 – Équipement Avicole depuis 1994 | Gers, Sud-Ouest</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="MEB32, votre spécialiste en équipement avicole depuis 1994. Ventilation, équipement bâtiment poules pondeuses, installation complète et SAV réactif dans le Gers, Hautes-Pyrénées, Landes, Pyrénées-Atlantiques, Lot-et-Garonne, Tarn et Haute-Garonne." />
+  <meta name="keywords" content="équipement avicole Gers, ventilation poulailler Sud-Ouest, poules pondeuses équipement, MEB32, installation avicole 32, SAV avicole" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="MEB32 – Équipement Avicole depuis 1994" />
+  <meta property="og:description" content="Spécialiste en ventilation et équipement pour bâtiments avicoles dans le Sud-Ouest. 30 ans d'expertise, SAV réactif, 7 départements." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://www.meb32.fr/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:   { DEFAULT: '#1E3A5F', light: '#2A517F', dark: '#152C48', 50: '#EBF0F7' },
+            secondary: { DEFAULT: '#2D6A4F', light: '#3A8463', dark: '#1F4D38', 50: '#EAF4EF' },
+            accent:    { DEFAULT: '#E07B39', light: '#E9924F', dark: '#C4682A', 50: '#FDF2EB' },
+            neutral:   { 50: '#F8F9FA', 100: '#F1F3F5', 200: '#E9ECEF', 300: '#DEE2E6', 700: '#495057', 800: '#343A40', 900: '#212529' },
+          },
+          fontFamily: {
+            heading: ['Inter', 'sans-serif'],
+            body:    ['Source Sans 3', 'sans-serif'],
+          },
+          boxShadow: {
+            card: '0 2px 16px rgba(30,58,95,0.08)',
+            hover: '0 8px 32px rgba(30,58,95,0.16)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', sans-serif; color: #2D3748; background: #F8F9FA; }
+    h1,h2,h3,h4 { font-family: 'Inter', sans-serif; }
+
+    /* Hero background */
+    .hero-bg {
+      background: linear-gradient(135deg, #0d2035 0%, #1a3550 40%, #1e3d2f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Animated barn silhouette */
+    .barn-silhouette {
+      position: absolute; bottom: 0; right: 0;
+      width: 55%; height: 90%;
+      background: linear-gradient(135deg, rgba(45,106,79,0.15) 0%, rgba(30,58,95,0.1) 100%);
+      clip-path: polygon(5% 100%, 5% 40%, 20% 20%, 35% 40%, 35% 30%, 50% 10%, 65% 30%, 65% 40%, 80% 35%, 95% 45%, 100% 45%, 100% 100%);
+    }
+
+    /* Grain texture overlay */
+    .grain::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; opacity: 0.4;
+    }
+
+    /* Scroll animations */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* Card hover */
+    .service-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(30,58,95,0.18); }
+
+    /* Stats counter */
+    .stat-item { border-right: 1px solid rgba(255,255,255,0.15); }
+    .stat-item:last-child { border-right: none; }
+
+    /* Partner logos */
+    .partner-logo { filter: grayscale(100%) opacity(0.5); transition: filter 0.3s ease; }
+    .partner-logo:hover { filter: grayscale(0%) opacity(1); }
+
+    /* Zone badge */
+    .zone-badge { transition: all 0.25s ease; cursor: default; }
+    .zone-badge:hover { transform: scale(1.05); }
+
+    /* Nav */
+    #navbar { transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background: rgba(30,58,95,0.97) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+
+    /* Form inputs */
+    .form-input:focus { outline: none; border-color: #1E3A5F; box-shadow: 0 0 0 3px rgba(30,58,95,0.15); }
+
+    /* Mobile menu */
+    #mobile-menu { transition: max-height 0.35s ease, opacity 0.35s ease; max-height: 0; opacity: 0; overflow: hidden; }
+    #mobile-menu.open { max-height: 400px; opacity: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up, .service-card, .zone-badge, .partner-logo { transition: none; }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm" role="navigation" aria-label="Navigation principale">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-18">
+
+      <!-- Logo -->
+      <a href="#accueil" class="flex items-center gap-2.5 group" aria-label="MEB32 – Accueil">
+        <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
+          <!-- Barn / building icon -->
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-white font-heading font-800 text-xl tracking-tight leading-none">MEB<span class="text-accent">32</span></span>
+          <p class="text-white/50 text-xs font-body leading-none mt-0.5 hidden sm:block">Équipement Avicole</p>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="#services" class="text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Services</a>
+        <a href="#zones" class="text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Zones</a>
+        <a href="#realisations" class="text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Réalisations</a>
+        <a href="#partenaires" class="text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Partenaires</a>
+        <a href="#contact" class="ml-3 bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-200 cursor-pointer shadow-sm">Nous contacter</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="lg:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden bg-primary-dark border-t border-white/10">
+    <div class="px-4 py-3 space-y-1">
+      <a href="#services" class="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors">Services</a>
+      <a href="#zones" class="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors">Zones d'intervention</a>
+      <a href="#realisations" class="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors">Réalisations</a>
+      <a href="#partenaires" class="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors">Partenaires</a>
+      <a href="#contact" class="block bg-accent hover:bg-accent-dark text-white px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors mt-2 text-center">Nous contacter</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section id="accueil" class="hero-bg grain relative min-h-screen flex items-center pt-16" aria-labelledby="hero-title">
+  <div class="barn-silhouette" aria-hidden="true"></div>
+
+  <!-- Floating accent blobs -->
+  <div class="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent/8 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
+    <div class="max-w-2xl lg:max-w-3xl">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 backdrop-blur-sm">
+        <span class="w-2 h-2 bg-accent rounded-full animate-pulse" aria-hidden="true"></span>
+        Spécialiste depuis 1994 · Sud-Ouest France
+      </div>
+
+      <!-- H1 -->
+      <h1 id="hero-title" class="font-heading font-extrabold text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight mb-6">
+        Votre spécialiste en<br/>
+        <span class="text-accent">équipement avicole</span><br/>
+        depuis 1994
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-white/75 text-lg sm:text-xl font-body leading-relaxed mb-8 max-w-xl">
+        Ventilation, équipement de bâtiments pour poules pondeuses, installation complète et
+        <strong class="text-white font-semibold">SAV réactif</strong> — au service des éleveurs professionnels du Sud-Ouest.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-accent/30 hover:shadow-xl text-base cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          Nous contacter
+        </a>
+        <a href="#services" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-medium px-7 py-3.5 rounded-xl transition-all duration-200 backdrop-blur-sm text-base cursor-pointer">
+          Découvrir nos services
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Trust signals -->
+      <div class="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-3">
+        <div class="flex items-center gap-2 text-white/60 text-sm">
+          <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          Devis gratuit
+        </div>
+        <div class="flex items-center gap-2 text-white/60 text-sm">
+          <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          SAV 24h
+        </div>
+        <div class="flex items-center gap-2 text-white/60 text-sm">
+          <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          7 départements couverts
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a href="#stats" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 hover:text-white/70 transition-colors cursor-pointer" aria-label="Défiler vers le bas">
+    <span class="text-xs font-body tracking-widest uppercase">Scroll</span>
+    <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </a>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════ -->
+<section id="stats" class="bg-primary" aria-label="Chiffres clés">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-white/10 lg:divide-x lg:divide-white/15">
+
+      <div class="flex flex-col items-center justify-center text-center py-8 px-6 lg:px-8">
+        <span class="font-heading font-extrabold text-3xl sm:text-4xl text-accent leading-none" data-count="30">30+</span>
+        <span class="text-white/70 text-sm font-body mt-1.5 leading-snug">ans<br/>d'expertise</span>
+      </div>
+
+      <div class="flex flex-col items-center justify-center text-center py-8 px-6 lg:px-8">
+        <span class="font-heading font-extrabold text-3xl sm:text-4xl text-accent leading-none">7</span>
+        <span class="text-white/70 text-sm font-body mt-1.5 leading-snug">départements<br/>couverts</span>
+      </div>
+
+      <div class="flex flex-col items-center justify-center text-center py-8 px-6 lg:px-8">
+        <span class="font-heading font-extrabold text-3xl sm:text-4xl text-accent leading-none">500+</span>
+        <span class="text-white/70 text-sm font-body mt-1.5 leading-snug">élevages<br/>équipés</span>
+      </div>
+
+      <div class="flex flex-col items-center justify-center text-center py-8 px-6 lg:px-8">
+        <span class="font-heading font-extrabold text-3xl sm:text-4xl text-accent leading-none">24h</span>
+        <span class="text-white/70 text-sm font-body mt-1.5 leading-snug">réactivité<br/>SAV</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     PRÉSENTATION MEB32
+═══════════════════════════════════════════ -->
+<section id="presentation" class="bg-white py-20 lg:py-28" aria-labelledby="presentation-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Left: Story -->
+      <div class="fade-up">
+        <div class="inline-flex items-center gap-2 text-secondary text-xs font-semibold tracking-widest uppercase mb-4">
+          <span class="w-6 h-0.5 bg-secondary" aria-hidden="true"></span>
+          Notre histoire
+        </div>
+        <h2 id="presentation-title" class="font-heading font-bold text-primary text-3xl sm:text-4xl leading-tight mb-6">
+          30 ans au service des<br/>éleveurs du Sud-Ouest
+        </h2>
+        <div class="space-y-4 text-neutral-700 font-body text-base leading-relaxed">
+          <p>
+            Fondée en 1994 dans le Gers, <strong class="text-primary font-semibold">MEB32</strong> accompagne les éleveurs avicoles professionnels dans l'équipement, l'installation et la maintenance de leurs bâtiments pour poules pondeuses.
+          </p>
+          <p>
+            Notre connaissance terrain du secteur avicole du Sud-Ouest, combinée à des partenariats avec les plus grands fabricants mondiaux, nous permet de proposer des solutions adaptées à chaque exploitation — quelle que soit sa taille.
+          </p>
+          <p>
+            Notre engagement : une réponse rapide, un suivi personnalisé et un <strong class="text-primary font-semibold">service après-vente réactif</strong> qui vous garantit la continuité de votre production en toutes circonstances.
+          </p>
+        </div>
+        <a href="#contact" class="mt-8 inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 cursor-pointer text-sm">
+          Demander un devis gratuit
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right: Values -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 fade-up">
+
+        <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 hover:border-primary/30 transition-colors duration-200">
+          <div class="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-primary text-base mb-2">Expertise reconnue</h3>
+          <p class="text-neutral-700 text-sm font-body leading-relaxed">30 ans d'expérience sur le terrain, avec des centaines d'installations réussies dans la région.</p>
+        </div>
+
+        <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 hover:border-secondary/30 transition-colors duration-200">
+          <div class="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-primary text-base mb-2">Proximité locale</h3>
+          <p class="text-neutral-700 text-sm font-body leading-relaxed">Basé dans le Gers, nous intervenons rapidement sur 7 départements du Sud-Ouest.</p>
+        </div>
+
+        <div class="bg-accent/5 border border-accent/20 rounded-2xl p-6 hover:border-accent/40 transition-colors duration-200 sm:col-span-2">
+          <div class="w-11 h-11 bg-accent/15 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-accent-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-primary text-base mb-2">SAV ultra-réactif</h3>
+          <p class="text-neutral-700 text-sm font-body leading-relaxed">Un problème en élevage n'attend pas. Notre équipe technique est mobilisée pour intervenir dans les <strong class="text-primary">24 heures</strong>, limitant tout impact sur votre production.</p>
+        </div>
+
+        <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 hover:border-primary/30 transition-colors duration-200">
+          <div class="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-primary text-base mb-2">Équipe dédiée</h3>
+          <p class="text-neutral-700 text-sm font-body leading-relaxed">Techniciens formés par les constructeurs, au service exclusif de l'aviculture.</p>
+        </div>
+
+        <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 hover:border-secondary/30 transition-colors duration-200">
+          <div class="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-primary text-base mb-2">Solutions sur mesure</h3>
+          <p class="text-neutral-700 text-sm font-body leading-relaxed">Chaque élevage est unique. Nous dimensionnons chaque projet selon vos besoins précis.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════ -->
+<section id="services" class="bg-neutral-50 py-20 lg:py-28" aria-labelledby="services-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+      <div class="inline-flex items-center gap-2 text-secondary text-xs font-semibold tracking-widest uppercase mb-4">
+        <span class="w-6 h-0.5 bg-secondary" aria-hidden="true"></span>
+        Nos prestations
+        <span class="w-6 h-0.5 bg-secondary" aria-hidden="true"></span>
+      </div>
+      <h2 id="services-title" class="font-heading font-bold text-primary text-3xl sm:text-4xl mb-4">
+        Des solutions complètes pour votre élevage
+      </h2>
+      <p class="text-neutral-700 font-body text-base leading-relaxed">
+        De la conception à la maintenance, MEB32 vous accompagne à chaque étape pour optimiser les conditions de votre élevage avicole.
+      </p>
+    </div>
+
+    <!-- Service cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Ventilation -->
+      <article class="service-card bg-white border border-neutral-200 rounded-2xl p-6 shadow-card cursor-default">
+        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-primary text-lg mb-3">Ventilation</h3>
+        <p class="text-neutral-700 font-body text-sm leading-relaxed mb-4">
+          Systèmes de ventilation dynamique et statique pour bâtiments avicoles. Régulation thermique, gestion de l'humidité et qualité de l'air pour le bien-être animal et la performance de vos pondeuses.
+        </p>
+        <ul class="space-y-1.5">
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Ventilateurs & turbines
+          </li>
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Entrées d'air motorisées
+          </li>
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Automates de régulation
+          </li>
+        </ul>
+      </article>
+
+      <!-- Équipement bâtiment -->
+      <article class="service-card bg-white border border-neutral-200 rounded-2xl p-6 shadow-card cursor-default">
+        <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-primary text-lg mb-3">Équipement bâtiment</h3>
+        <p class="text-neutral-700 font-body text-sm leading-relaxed mb-4">
+          Équipements complets pour bâtiments de poules pondeuses en cage aménagée ou en système alternatif : alimentation automatique, abreuvement, éclairage et nidification.
+        </p>
+        <ul class="space-y-1.5">
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Cages aménagées & volières
+          </li>
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Chaînes d'alimentation
+          </li>
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Ramassage automatique des œufs
+          </li>
+        </ul>
+      </article>
+
+      <!-- Installation complète -->
+      <article class="service-card bg-primary rounded-2xl p-6 shadow-card cursor-default relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-8 translate-x-8 pointer-events-none" aria-hidden="true"></div>
+        <div class="w-14 h-14 bg-white/15 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
+          </svg>
+        </div>
+        <div class="inline-flex items-center gap-1.5 bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full mb-3">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          Clé en main
+        </div>
+        <h3 class="font-heading font-bold text-white text-lg mb-3">Installation complète</h3>
+        <p class="text-white/80 font-body text-sm leading-relaxed mb-4">
+          Prise en charge totale de votre projet d'équipement : étude technique, fourniture du matériel, pose professionnelle et mise en service, avec accompagnement sur la durée.
+        </p>
+        <ul class="space-y-1.5">
+          <li class="flex items-start gap-2 text-sm text-white/80 font-body">
+            <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Étude & dimensionnement
+          </li>
+          <li class="flex items-start gap-2 text-sm text-white/80 font-body">
+            <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Fourniture & pose
+          </li>
+          <li class="flex items-start gap-2 text-sm text-white/80 font-body">
+            <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Mise en service & formation
+          </li>
+        </ul>
+      </article>
+
+      <!-- SAV & Maintenance -->
+      <article class="service-card bg-white border border-neutral-200 rounded-2xl p-6 shadow-card cursor-default">
+        <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-7 h-7 text-accent-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-primary text-lg mb-3">SAV & Maintenance</h3>
+        <p class="text-neutral-700 font-body text-sm leading-relaxed mb-4">
+          Notre service après-vente est notre priorité absolue. Intervention rapide, pièces de rechange disponibles, contrats de maintenance préventive pour éviter toute interruption.
+        </p>
+        <ul class="space-y-1.5">
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-accent-dark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Intervention sous 24h
+          </li>
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-accent-dark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Stock de pièces détachées
+          </li>
+          <li class="flex items-start gap-2 text-sm text-neutral-700 font-body">
+            <svg class="w-4 h-4 text-accent-dark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Contrats de maintenance
+          </li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-12 fade-up">
+      <p class="text-neutral-700 font-body mb-4 text-sm">Besoin d'une prestation spécifique ? Parlons de votre projet.</p>
+      <a href="#contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-7 py-3 rounded-xl transition-colors duration-200 cursor-pointer shadow-sm text-sm">
+        Demander un devis gratuit
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     ZONES D'INTERVENTION
+═══════════════════════════════════════════ -->
+<section id="zones" class="bg-white py-20 lg:py-28" aria-labelledby="zones-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <!-- Left: Text -->
+      <div class="fade-up">
+        <div class="inline-flex items-center gap-2 text-secondary text-xs font-semibold tracking-widest uppercase mb-4">
+          <span class="w-6 h-0.5 bg-secondary" aria-hidden="true"></span>
+          Zones d'intervention
+        </div>
+        <h2 id="zones-title" class="font-heading font-bold text-primary text-3xl sm:text-4xl mb-6">
+          7 départements du Sud-Ouest couverts
+        </h2>
+        <p class="text-neutral-700 font-body leading-relaxed mb-8">
+          Notre équipe intervient dans un rayon optimisé pour garantir réactivité et qualité de service. Basés dans le Gers, nous couvrons l'ensemble des zones avicoles majeures du Sud-Ouest de la France.
+        </p>
+        <div class="flex items-start gap-3 p-4 bg-accent/8 border border-accent/20 rounded-xl">
+          <svg class="w-5 h-5 text-accent-dark mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <p class="text-sm text-neutral-700 font-body leading-relaxed">
+            <strong class="text-primary font-semibold">Vous êtes hors zone ?</strong> Contactez-nous quand même — nous étudions toute demande selon la nature du projet.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Zone Grid -->
+      <div class="fade-up">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" role="list" aria-label="Départements d'intervention">
+
+          <div class="zone-badge bg-primary text-white rounded-2xl p-4 text-center shadow-card" role="listitem">
+            <span class="font-heading font-extrabold text-2xl text-accent block leading-none">32</span>
+            <span class="text-white font-semibold text-sm mt-1 block">Gers</span>
+            <span class="text-white/60 text-xs font-body mt-0.5 block">Siège</span>
+          </div>
+
+          <div class="zone-badge bg-neutral-50 border border-neutral-200 rounded-2xl p-4 text-center shadow-card hover:border-primary/30 hover:bg-primary-50 transition-colors" role="listitem">
+            <span class="font-heading font-extrabold text-2xl text-primary block leading-none">65</span>
+            <span class="text-neutral-800 font-semibold text-sm mt-1 block">Hautes-Pyrénées</span>
+            <span class="text-neutral-500 text-xs font-body mt-0.5 block">Zone couverte</span>
+          </div>
+
+          <div class="zone-badge bg-neutral-50 border border-neutral-200 rounded-2xl p-4 text-center shadow-card hover:border-primary/30 hover:bg-primary-50 transition-colors" role="listitem">
+            <span class="font-heading font-extrabold text-2xl text-primary block leading-none">40</span>
+            <span class="text-neutral-800 font-semibold text-sm mt-1 block">Landes</span>
+            <span class="text-neutral-500 text-xs font-body mt-0.5 block">Zone couverte</span>
+          </div>
+
+          <div class="zone-badge bg-neutral-50 border border-neutral-200 rounded-2xl p-4 text-center shadow-card hover:border-primary/30 hover:bg-primary-50 transition-colors" role="listitem">
+            <span class="font-heading font-extrabold text-2xl text-primary block leading-none">64</span>
+            <span class="text-neutral-800 font-semibold text-sm mt-1 block">Pyrénées-Atlantiques</span>
+            <span class="text-neutral-500 text-xs font-body mt-0.5 block">Zone couverte</span>
+          </div>
+
+          <div class="zone-badge bg-neutral-50 border border-neutral-200 rounded-2xl p-4 text-center shadow-card hover:border-primary/30 hover:bg-primary-50 transition-colors" role="listitem">
+            <span class="font-heading font-extrabold text-2xl text-primary block leading-none">47</span>
+            <span class="text-neutral-800 font-semibold text-sm mt-1 block">Lot-et-Garonne</span>
+            <span class="text-neutral-500 text-xs font-body mt-0.5 block">Zone couverte</span>
+          </div>
+
+          <div class="zone-badge bg-neutral-50 border border-neutral-200 rounded-2xl p-4 text-center shadow-card hover:border-primary/30 hover:bg-primary-50 transition-colors" role="listitem">
+            <span class="font-heading font-extrabold text-2xl text-primary block leading-none">81</span>
+            <span class="text-neutral-800 font-semibold text-sm mt-1 block">Tarn</span>
+            <span class="text-neutral-500 text-xs font-body mt-0.5 block">Zone couverte</span>
+          </div>
+
+          <div class="zone-badge bg-secondary text-white rounded-2xl p-4 text-center shadow-card sm:col-start-2" role="listitem">
+            <span class="font-heading font-extrabold text-2xl text-white block leading-none">31</span>
+            <span class="text-white font-semibold text-sm mt-1 block">Haute-Garonne</span>
+            <span class="text-white/70 text-xs font-body mt-0.5 block">Zone couverte</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     PARTENAIRES
+═══════════════════════════════════════════ -->
+<section id="partenaires" class="bg-neutral-100 py-16 lg:py-20 border-y border-neutral-200" aria-labelledby="partenaires-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 fade-up">
+      <div class="inline-flex items-center gap-2 text-neutral-500 text-xs font-semibold tracking-widest uppercase mb-3">
+        <span class="w-6 h-0.5 bg-neutral-400" aria-hidden="true"></span>
+        Nos partenaires fabricants
+        <span class="w-6 h-0.5 bg-neutral-400" aria-hidden="true"></span>
+      </div>
+      <h2 id="partenaires-title" class="font-heading font-bold text-primary text-2xl sm:text-3xl">
+        Les meilleures marques mondiales
+      </h2>
+      <p class="text-neutral-600 font-body text-sm mt-2 max-w-lg mx-auto">Revendeur et installateur agréé des équipements de référence dans l'aviculture intensive et alternative.</p>
+    </div>
+
+    <!-- Partners grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 fade-up" role="list" aria-label="Marques partenaires">
+
+      <div class="partner-logo bg-white rounded-xl p-5 flex items-center justify-center border border-neutral-200 cursor-default" role="listitem">
+        <div class="text-center">
+          <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+          </div>
+          <span class="font-heading font-bold text-neutral-700 text-xs leading-tight block">Big Dutchman</span>
+        </div>
+      </div>
+
+      <div class="partner-logo bg-white rounded-xl p-5 flex items-center justify-center border border-neutral-200 cursor-default" role="listitem">
+        <div class="text-center">
+          <div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+          </div>
+          <span class="font-heading font-bold text-neutral-700 text-xs leading-tight block">Roxell</span>
+        </div>
+      </div>
+
+      <div class="partner-logo bg-white rounded-xl p-5 flex items-center justify-center border border-neutral-200 cursor-default" role="listitem">
+        <div class="text-center">
+          <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-accent-dark" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <span class="font-heading font-bold text-neutral-700 text-xs leading-tight block">SKOV</span>
+        </div>
+      </div>
+
+      <div class="partner-logo bg-white rounded-xl p-5 flex items-center justify-center border border-neutral-200 cursor-default" role="listitem">
+        <div class="text-center">
+          <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+          </div>
+          <span class="font-heading font-bold text-neutral-700 text-xs leading-tight block">Fancom</span>
+        </div>
+      </div>
+
+      <div class="partner-logo bg-white rounded-xl p-5 flex items-center justify-center border border-neutral-200 cursor-default" role="listitem">
+        <div class="text-center">
+          <div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+          </div>
+          <span class="font-heading font-bold text-neutral-700 text-xs leading-tight block">Hellmann</span>
+        </div>
+      </div>
+
+      <div class="partner-logo bg-white rounded-xl p-5 flex items-center justify-center border border-neutral-200 cursor-default" role="listitem">
+        <div class="text-center">
+          <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+            <svg class="w-5 h-5 text-accent-dark" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg>
+          </div>
+          <span class="font-heading font-bold text-neutral-700 text-xs leading-tight block">Tecno Poultry</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     RÉALISATIONS
+═══════════════════════════════════════════ -->
+<section id="realisations" class="bg-neutral-50 py-20 lg:py-28" aria-labelledby="realisations-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+      <div class="inline-flex items-center gap-2 text-secondary text-xs font-semibold tracking-widest uppercase mb-4">
+        <span class="w-6 h-0.5 bg-secondary" aria-hidden="true"></span>
+        Nos réalisations
+        <span class="w-6 h-0.5 bg-secondary" aria-hidden="true"></span>
+      </div>
+      <h2 id="realisations-title" class="font-heading font-bold text-primary text-3xl sm:text-4xl mb-4">
+        Des projets clés en main réussis
+      </h2>
+      <p class="text-neutral-700 font-body text-base leading-relaxed">
+        Retrouvez quelques exemples de nos interventions récentes dans les exploitations avicoles du Sud-Ouest.
+      </p>
+    </div>
+
+    <!-- Project cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Project 1 -->
+      <article class="service-card bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-card cursor-default">
+        <!-- Image placeholder -->
+        <div class="relative h-48 bg-gradient-to-br from-primary/80 to-secondary/70 flex items-center justify-center overflow-hidden">
+          <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.1) 10px, rgba(255,255,255,.1) 20px);" aria-hidden="true"></div>
+          <div class="text-center text-white z-10">
+            <svg class="w-12 h-12 mx-auto mb-2 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10"/>
+            </svg>
+            <span class="text-sm font-semibold opacity-80">Bâtiment avicole — Gers (32)</span>
+          </div>
+          <div class="absolute top-3 left-3 bg-accent text-white text-xs font-semibold px-2.5 py-1 rounded-full">Installation complète</div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-heading font-bold text-primary text-base mb-1.5">Élevage 20 000 pondeuses — Auch</h3>
+          <p class="text-neutral-600 font-body text-sm leading-relaxed mb-3">Renouvellement complet de la ventilation dynamique et installation d'un système d'alimentation automatique Big Dutchman pour 4 bâtiments.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="bg-primary/8 text-primary text-xs font-semibold px-2.5 py-1 rounded-full">Ventilation</span>
+            <span class="bg-secondary/8 text-secondary text-xs font-semibold px-2.5 py-1 rounded-full">Alimentation</span>
+            <span class="bg-neutral-100 text-neutral-600 text-xs font-semibold px-2.5 py-1 rounded-full">Gers (32)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="service-card bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-card cursor-default">
+        <div class="relative h-48 bg-gradient-to-br from-secondary/80 to-primary/70 flex items-center justify-center overflow-hidden">
+          <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,.1) 10px, rgba(255,255,255,.1) 20px);" aria-hidden="true"></div>
+          <div class="text-center text-white z-10">
+            <svg class="w-12 h-12 mx-auto mb-2 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <span class="text-sm font-semibold opacity-80">Bâtiment avicole — Landes (40)</span>
+          </div>
+          <div class="absolute top-3 left-3 bg-secondary text-white text-xs font-semibold px-2.5 py-1 rounded-full">Ventilation & automates</div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-heading font-bold text-primary text-base mb-1.5">Mise aux normes ventilation — Mont-de-Marsan</h3>
+          <p class="text-neutral-600 font-body text-sm leading-relaxed mb-3">Remplacement de l'ensemble des ventilateurs et installation d'un automate SKOV pour la gestion climatique optimale de 2 bâtiments de 15 000 poules.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="bg-primary/8 text-primary text-xs font-semibold px-2.5 py-1 rounded-full">Ventilation</span>
+            <span class="bg-accent/10 text-accent-dark text-xs font-semibold px-2.5 py-1 rounded-full">Automates</span>
+            <span class="bg-neutral-100 text-neutral-600 text-xs font-semibold px-2.5 py-1 rounded-full">Landes (40)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="service-card bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-card cursor-default">
+        <div class="relative h-48 bg-gradient-to-br from-accent/70 to-primary/80 flex items-center justify-center overflow-hidden">
+          <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255,255,255,.1) 10px, rgba(255,255,255,.1) 20px);" aria-hidden="true"></div>
+          <div class="text-center text-white z-10">
+            <svg class="w-12 h-12 mx-auto mb-2 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            </svg>
+            <span class="text-sm font-semibold opacity-80">SAV urgent — Haute-Garonne (31)</span>
+          </div>
+          <div class="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full">SAV d'urgence</div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-heading font-bold text-primary text-base mb-1.5">Intervention d'urgence — Toulouse Sud</h3>
+          <p class="text-neutral-600 font-body text-sm leading-relaxed mb-3">Diagnostic et remplacement d'un automate de ventilation en panne en moins de 12h pour éviter toute perte sur un élevage de 30 000 pondeuses en plein été.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="bg-accent/10 text-accent-dark text-xs font-semibold px-2.5 py-1 rounded-full">SAV Urgence</span>
+            <span class="bg-primary/8 text-primary text-xs font-semibold px-2.5 py-1 rounded-full">Automates</span>
+            <span class="bg-neutral-100 text-neutral-600 text-xs font-semibold px-2.5 py-1 rounded-full">Haute-Garonne (31)</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 fade-up">
+      <a href="#contact" class="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-7 py-3 rounded-xl transition-all duration-200 cursor-pointer text-sm">
+        Discuter de votre projet
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<section id="contact" class="bg-primary py-20 lg:py-28 relative overflow-hidden" aria-labelledby="contact-title">
+  <!-- Background decoration -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full translate-y-32 -translate-x-32 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 text-accent text-xs font-semibold tracking-widest uppercase mb-4">
+        <span class="w-6 h-0.5 bg-accent" aria-hidden="true"></span>
+        Contact
+        <span class="w-6 h-0.5 bg-accent" aria-hidden="true"></span>
+      </div>
+      <h2 id="contact-title" class="font-heading font-bold text-white text-3xl sm:text-4xl mb-4">
+        Parlons de votre projet
+      </h2>
+      <p class="text-white/70 font-body text-base max-w-xl mx-auto">
+        Devis gratuit, questions techniques ou urgence SAV — notre équipe vous répond rapidement.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-3 fade-up">
+        <form id="contact-form" class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl" novalidate aria-label="Formulaire de contact MEB32">
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="nom" class="block text-sm font-semibold text-neutral-800 mb-1.5 font-heading">Nom & Prénom <span class="text-accent" aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" required autocomplete="name"
+                class="form-input w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-sm text-neutral-800 font-body transition-all duration-200 placeholder-neutral-400"
+                placeholder="Jean Dupont" aria-required="true" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold text-neutral-800 mb-1.5 font-heading">Email <span class="text-accent" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email"
+                class="form-input w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-sm text-neutral-800 font-body transition-all duration-200 placeholder-neutral-400"
+                placeholder="jean@exploitation.fr" aria-required="true" />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="telephone" class="block text-sm font-semibold text-neutral-800 mb-1.5 font-heading">Téléphone <span class="text-accent" aria-hidden="true">*</span></label>
+              <input type="tel" id="telephone" name="telephone" required autocomplete="tel"
+                class="form-input w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-sm text-neutral-800 font-body transition-all duration-200 placeholder-neutral-400"
+                placeholder="06 XX XX XX XX" aria-required="true" />
+            </div>
+            <div>
+              <label for="departement" class="block text-sm font-semibold text-neutral-800 mb-1.5 font-heading">Département</label>
+              <select id="departement" name="departement"
+                class="form-input w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-sm text-neutral-800 font-body transition-all duration-200 cursor-pointer">
+                <option value="">Sélectionner...</option>
+                <option value="32">32 – Gers</option>
+                <option value="65">65 – Hautes-Pyrénées</option>
+                <option value="40">40 – Landes</option>
+                <option value="64">64 – Pyrénées-Atlantiques</option>
+                <option value="47">47 – Lot-et-Garonne</option>
+                <option value="81">81 – Tarn</option>
+                <option value="31">31 – Haute-Garonne</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="sujet" class="block text-sm font-semibold text-neutral-800 mb-1.5 font-heading">Objet de la demande</label>
+            <select id="sujet" name="sujet"
+              class="form-input w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-sm text-neutral-800 font-body transition-all duration-200 cursor-pointer">
+              <option value="">Type de demande...</option>
+              <option value="devis">Demande de devis</option>
+              <option value="ventilation">Ventilation bâtiment</option>
+              <option value="equipement">Équipement bâtiment</option>
+              <option value="installation">Installation complète</option>
+              <option value="sav">SAV & Maintenance</option>
+              <option value="urgence">Urgence technique</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <label for="message" class="block text-sm font-semibold text-neutral-800 mb-1.5 font-heading">Message <span class="text-accent" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" required rows="4"
+              class="form-input w-full bg-neutral-50 border border-neutral-300 rounded-xl px-4 py-3 text-sm text-neutral-800 font-body transition-all duration-200 placeholder-neutral-400 resize-none"
+              placeholder="Décrivez votre projet ou besoin : type de bâtiment, nombre de pondeuses, problème rencontré..." aria-required="true"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-accent hover:bg-accent-dark text-white font-semibold py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 text-base cursor-pointer shadow-sm hover:shadow-accent/30 hover:shadow-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Envoyer ma demande
+          </button>
+
+          <p id="form-success" class="hidden mt-4 text-center text-sm text-secondary font-semibold bg-secondary/10 rounded-xl py-3 px-4" role="alert">
+            Votre message a bien été envoyé. Nous vous recontacterons sous 24h.
+          </p>
+          <p class="mt-3 text-xs text-neutral-500 font-body text-center">Réponse garantie sous 24h ouvrées. Devis gratuit et sans engagement.</p>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="lg:col-span-2 space-y-5 fade-up">
+
+        <!-- Phone -->
+        <div class="bg-white/10 border border-white/15 rounded-2xl p-5 backdrop-blur-sm">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-white/60 text-xs font-body uppercase tracking-wide mb-1">Téléphone</p>
+              <a href="tel:+33XXXXXXXXX" class="text-white font-heading font-semibold text-lg hover:text-accent transition-colors cursor-pointer">05 XX XX XX XX</a>
+              <p class="text-white/50 text-xs font-body mt-0.5">Lun–Ven 8h–18h · SAV urgent 7j/7</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="bg-white/10 border border-white/15 rounded-2xl p-5 backdrop-blur-sm">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-white/60 text-xs font-body uppercase tracking-wide mb-1">Email</p>
+              <a href="mailto:contact@meb32.fr" class="text-white font-heading font-semibold hover:text-accent transition-colors cursor-pointer">contact@meb32.fr</a>
+              <p class="text-white/50 text-xs font-body mt-0.5">Réponse sous 24h ouvrées</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="bg-white/10 border border-white/15 rounded-2xl p-5 backdrop-blur-sm">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-white/60 text-xs font-body uppercase tracking-wide mb-1">Adresse</p>
+              <p class="text-white font-heading font-semibold">MEB32</p>
+              <p class="text-white/70 text-sm font-body">Gers (32) — Sud-Ouest France</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zones served list -->
+        <div class="bg-white/10 border border-white/15 rounded-2xl p-5 backdrop-blur-sm">
+          <p class="text-white/60 text-xs font-body uppercase tracking-wide mb-3">Zones couvertes</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-white/15 text-white text-xs font-semibold px-2.5 py-1 rounded-full">32 Gers</span>
+            <span class="bg-white/15 text-white text-xs font-semibold px-2.5 py-1 rounded-full">65 H.-Pyrénées</span>
+            <span class="bg-white/15 text-white text-xs font-semibold px-2.5 py-1 rounded-full">40 Landes</span>
+            <span class="bg-white/15 text-white text-xs font-semibold px-2.5 py-1 rounded-full">64 Pyr.-Atl.</span>
+            <span class="bg-white/15 text-white text-xs font-semibold px-2.5 py-1 rounded-full">47 Lot-et-G.</span>
+            <span class="bg-white/15 text-white text-xs font-semibold px-2.5 py-1 rounded-full">81 Tarn</span>
+            <span class="bg-white/15 text-white text-xs font-semibold px-2.5 py-1 rounded-full">31 H.-Garonne</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="bg-primary-dark text-white py-12 lg:py-16" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+
+      <!-- Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-heading font-800 text-xl text-white tracking-tight">MEB<span class="text-accent">32</span></span>
+            <p class="text-white/40 text-xs font-body">Équipement Avicole</p>
+          </div>
+        </div>
+        <p class="text-white/50 text-sm font-body leading-relaxed mb-4">
+          Votre partenaire de confiance pour l'équipement avicole dans le Sud-Ouest depuis 1994.
+        </p>
+        <p class="text-white/30 text-xs font-body">SIRET : XX XXX XXX XXXXX</p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="font-heading font-semibold text-white/90 text-sm mb-4 uppercase tracking-wider">Navigation</h3>
+        <ul class="space-y-2.5">
+          <li><a href="#services" class="text-white/50 hover:text-white text-sm font-body transition-colors cursor-pointer">Nos services</a></li>
+          <li><a href="#zones" class="text-white/50 hover:text-white text-sm font-body transition-colors cursor-pointer">Zones d'intervention</a></li>
+          <li><a href="#realisations" class="text-white/50 hover:text-white text-sm font-body transition-colors cursor-pointer">Réalisations</a></li>
+          <li><a href="#partenaires" class="text-white/50 hover:text-white text-sm font-body transition-colors cursor-pointer">Partenaires</a></li>
+          <li><a href="#contact" class="text-white/50 hover:text-white text-sm font-body transition-colors cursor-pointer">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="font-heading font-semibold text-white/90 text-sm mb-4 uppercase tracking-wider">Services</h3>
+        <ul class="space-y-2.5">
+          <li><span class="text-white/50 text-sm font-body">Ventilation avicole</span></li>
+          <li><span class="text-white/50 text-sm font-body">Équipement bâtiment</span></li>
+          <li><span class="text-white/50 text-sm font-body">Installation complète</span></li>
+          <li><span class="text-white/50 text-sm font-body">SAV & Maintenance</span></li>
+          <li><span class="text-white/50 text-sm font-body">Devis gratuit</span></li>
+        </ul>
+      </div>
+
+      <!-- Contact CTA -->
+      <div>
+        <h3 class="font-heading font-semibold text-white/90 text-sm mb-4 uppercase tracking-wider">Contact rapide</h3>
+        <div class="space-y-3 mb-5">
+          <a href="tel:+33XXXXXXXXX" class="flex items-center gap-2 text-white/50 hover:text-white text-sm font-body transition-colors cursor-pointer">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            05 XX XX XX XX
+          </a>
+          <a href="mailto:contact@meb32.fr" class="flex items-center gap-2 text-white/50 hover:text-white text-sm font-body transition-colors cursor-pointer">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            contact@meb32.fr
+          </a>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors duration-200 cursor-pointer w-full justify-center">
+          Nous contacter
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-white/30 text-xs font-body text-center sm:text-left">
+        &copy; 2025 MEB32 – Équipement Avicole. Tous droits réservés. · Gers (32) · Sud-Ouest France
+      </p>
+      <div class="flex gap-5">
+        <a href="#" class="text-white/30 hover:text-white/60 text-xs font-body transition-colors cursor-pointer">Mentions légales</a>
+        <a href="#" class="text-white/30 hover:text-white/60 text-xs font-body transition-colors cursor-pointer">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     JavaScript
+═══════════════════════════════════════════ -->
+<script>
+  // ─── Navbar scroll effect ───
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    if (window.scrollY > 60) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ─── Mobile menu toggle ───
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let menuOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open', menuOpen);
+    iconOpen.classList.toggle('hidden', menuOpen);
+    iconClose.classList.toggle('hidden', !menuOpen);
+    menuBtn.setAttribute('aria-expanded', menuOpen);
+  });
+
+  // Close mobile menu on nav link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // ─── Scroll fade-up animations ───
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ─── Contact form ───
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('form-success');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+
+    // Simulate async send
+    setTimeout(() => {
+      successMsg.classList.remove('hidden');
+      form.reset();
+      btn.disabled = false;
+      btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Envoyer ma demande`;
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 1200);
+  });
+
+  // ─── Smooth scroll for anchor links ───
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = navbar.offsetHeight + 8;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ─── Staggered service card animation ───
+  document.querySelectorAll('.service-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 60}ms`;
+  });
+</script>
+
+</body>
+</html>

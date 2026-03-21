@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Leaflet — must be imported before custom styles */
+@import "leaflet/dist/leaflet.css";
+
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-gray-700 bg-gray-50 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* ── Component utilities ───────────────────────────────────────────────────── */
+@layer utilities {
+  /* Section labels with side lines */
+  .section-label {
+    @apply inline-flex items-center gap-2 text-secondary text-xs font-semibold tracking-widest uppercase mb-4;
+  }
+  .section-label::before,
+  .section-label::after {
+    content: "";
+    @apply block w-6 h-px bg-secondary flex-shrink-0;
+  }
+
+  .section-label-accent {
+    @apply inline-flex items-center gap-2 text-accent text-xs font-semibold tracking-widest uppercase mb-4;
+  }
+  .section-label-accent::before,
+  .section-label-accent::after {
+    content: "";
+    @apply block w-6 h-px bg-accent flex-shrink-0;
+  }
+
+  /* Form input base style */
+  .input-base {
+    @apply w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-sm text-gray-800 font-body
+           placeholder-gray-400 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary;
+  }
+
+  .input-error {
+    @apply border-red-400 focus:ring-red-200 focus:border-red-400;
+  }
+}
+
+/* ── Leaflet overrides ─────────────────────────────────────────────────────── */
+.leaflet-container {
+  font-family: var(--font-source-sans), sans-serif;
+  border-radius: 1rem;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.75rem !important;
+  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.18) !important;
+  border: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 0.75rem !important;
+  font-size: 0.875rem;
+}
+
+.leaflet-popup-tip-container {
+  display: none !important;
+}
+
+/* ── Scroll fade animation ─────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
